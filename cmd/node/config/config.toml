@@ -12,19 +12,19 @@
    StartInEpochEnabled = true
 
    # SCDeployEnableEpoch represents the epoch when the deployment of smart contracts will be enabled
-   SCDeployEnableEpoch = 6
+   SCDeployEnableEpoch = 56
 
    # BuiltInFunctionsEnableEpoch represents the epoch when the built in functions will be enabled
-   BuiltInFunctionsEnableEpoch = 6
+   BuiltInFunctionsEnableEpoch = 56
 
    # RelayedTransactionsEnableEpoch represents the epoch when the relayed transactions will be enabled
-   RelayedTransactionsEnableEpoch = 6
+   RelayedTransactionsEnableEpoch = 56
 
    # PenalizedTooMuchGasEnableEpoch represents the epoch when the penalization for using too much gas will be enabled
-   PenalizedTooMuchGasEnableEpoch = 6
+   PenalizedTooMuchGasEnableEpoch = 56
 
    # SwitchJailWaitingEnableEpoch represents the epoch when the system smart contract processing at end of epoch is enabled
-   SwitchJailWaitingEnableEpoch = 6
+   SwitchJailWaitingEnableEpoch = 56
 
    # GenesisString represents the encoded string for the genesis block
    GenesisString = "67656E65736973"
