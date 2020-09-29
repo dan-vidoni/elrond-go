@@ -1,8 +1,6 @@
 package transaction
 
 import (
-	"encoding/hex"
-
 	"github.com/ElrondNetwork/elrond-go/core"
 	"github.com/ElrondNetwork/elrond-go/core/check"
 	"github.com/ElrondNetwork/elrond-go/data/state"
@@ -83,10 +81,6 @@ func (txProc *metaTxProcessor) ProcessTransaction(tx *transaction.Transaction) (
 	txHash, err := core.CalculateHash(txProc.marshalizer, txProc.hasher, tx)
 	if err != nil {
 		return 0, err
-	}
-
-	if hex.EncodeToString(txHash) == "288a54017cc6ccc74a5bae3967ee441e13344665c61e16e383bd2851611d6bea" {
-		log.Info("TADA!")
 	}
 
 	process.DisplayProcessTxDetails(

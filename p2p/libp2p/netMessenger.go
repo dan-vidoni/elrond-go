@@ -55,7 +55,7 @@ const acceptMessagesInAdvanceDuration = 5 * time.Second //we are accepting the m
 const broadcastGoRoutines = 1000
 const timeBetweenPeerPrints = time.Second * 20
 const timeBetweenExternalLoggersCheck = time.Second * 20
-const defaultThresholdMinConnectedPeers = 0
+const defaultThresholdMinConnectedPeers = 3
 const minRangePortValue = 1025
 const noSignPolicy = pubsub.MessageSignaturePolicy(0) //should be used only in tests
 

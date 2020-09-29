@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/hex"
 	"fmt"
+	"github.com/ElrondNetwork/elrond-go/vm"
 	"math/big"
 	"strings"
 	"time"
@@ -20,9 +21,7 @@ import (
 	"github.com/ElrondNetwork/elrond-go/marshal"
 	"github.com/ElrondNetwork/elrond-go/process"
 	"github.com/ElrondNetwork/elrond-go/sharding"
-	"github.com/ElrondNetwork/elrond-go/vm"
 	vmcommon "github.com/ElrondNetwork/elrond-vm-common"
-	"github.com/davecgh/go-spew/spew"
 )
 
 var _ process.SmartContractResultProcessor = (*scProcessor)(nil)
@@ -820,10 +819,6 @@ func (sc *scProcessor) processVMOutput(
 
 	scrTxs = append(scrTxs, scrForSender)
 
-	for _, scr := range scrTxs {
-		sc.printSc(scr.(*smartContractResult.SmartContractResult))
-	}
-
 	if !check.IfNil(acntSnd) {
 		err = acntSnd.AddToBalance(scrForSender.Value)
 		if err != nil {
@@ -844,10 +839,6 @@ func (sc *scProcessor) processVMOutput(
 	sc.gasHandler.SetGasRefunded(vmOutput.GasRemaining, txHash)
 
 	return scrTxs, consumedFee, nil
-}
-
-func (sc *scProcessor) printSc(scr *smartContractResult.SmartContractResult) {
-	log.Info("SCR contents:\n" + spew.Sprintf("%s", scr))
 }
 
 func (sc *scProcessor) penalizeUserIfNeeded(

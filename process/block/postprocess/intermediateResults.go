@@ -14,7 +14,6 @@ import (
 	"github.com/ElrondNetwork/elrond-go/marshal"
 	"github.com/ElrondNetwork/elrond-go/process"
 	"github.com/ElrondNetwork/elrond-go/sharding"
-	"github.com/davecgh/go-spew/spew"
 )
 
 var _ process.IntermediateTransactionHandler = (*intermediateResultsProcessor)(nil)
@@ -215,7 +214,6 @@ func (irp *intermediateResultsProcessor) AddIntermediateTransactions(txs []data.
 		}
 
 		log.Trace("scr added", "txHash", addScr.PrevTxHash, "hash", scrHash, "nonce", addScr.Nonce, "gasLimit", addScr.GasLimit, "value", addScr.Value)
-		irp.printSc(addScr)
 
 		sndShId, dstShId, err := irp.getShardIdsFromAddresses(addScr.SndAddr, addScr.RcvAddr)
 		if err != nil {
@@ -229,10 +227,6 @@ func (irp *intermediateResultsProcessor) AddIntermediateTransactions(txs []data.
 	}
 
 	return nil
-}
-
-func (irp *intermediateResultsProcessor) printSc(scr *smartContractResult.SmartContractResult) {
-	log.Warn("SCR contents:\n" + spew.Sprintf("%s", scr))
 }
 
 func (irp *intermediateResultsProcessor) getShardIdsFromAddresses(sndAddr []byte, rcvAddr []byte) (uint32, uint32, error) {
