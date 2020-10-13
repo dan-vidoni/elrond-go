@@ -38,7 +38,7 @@ const (
 const waitingAllSigsMaxTimeThreshold = 0.5
 
 // processingThresholdPercent specifies the max allocated time for processing the block as a percentage of the total time of the round
-const processingThresholdPercent = 85
+const processingThresholdPercent = 95
 
 // srStartStartTime specifies the start time, from the total time of the round, of Subround Start
 const srStartStartTime = 0.0
