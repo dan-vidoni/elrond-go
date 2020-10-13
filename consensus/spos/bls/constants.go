@@ -56,13 +56,13 @@ const srBlockEndTime = 0.40
 const srSignatureStartTime = 0.40
 
 // srSignatureEndTime specifies the end time, from the total time of the round, of Subround Signature
-const srSignatureEndTime = 0.85
+const srSignatureEndTime = 0.95
 
 // srEndStartTime specifies the start time, from the total time of the round, of Subround End
-const srEndStartTime = 0.85
+const srEndStartTime = 0.95
 
 // srEndEndTime specifies the end time, from the total time of the round, of Subround End
-const srEndEndTime = 0.95
+const srEndEndTime = 0.99
 
 const (
 	// BlockBodyAndHeaderStringValue represents the string to be used to identify a block body and a block header

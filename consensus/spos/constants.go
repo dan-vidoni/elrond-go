@@ -3,7 +3,7 @@ package spos
 //TODO consider moving these constants in config file
 
 // MaxThresholdPercent specifies the max allocated time percent for doing Job as a percentage of the total time of one round
-const MaxThresholdPercent = 95
+const MaxThresholdPercent = 99
 
 // LeaderPeerHonestyIncreaseFactor specifies the factor with which the honesty of the leader should be increased
 // if it proposed a block or sent the final info, in its correct allocated slot/time-frame/round
